@@ -4,12 +4,12 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net472</TargetFramework>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <ApplicationIcon />
+    <StartupObject />
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="UserLogs.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <ProjectReference Include="..\UserLogin\UserLogin.csproj" />
   </ItemGroup>
 
 </Project>

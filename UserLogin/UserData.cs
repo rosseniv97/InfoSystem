@@ -6,7 +6,7 @@ using System.Text;
 namespace UserLogin
 {
     
-    static class UserData
+    static public class UserData
     {
         static private List<User> _testUsers;
         static public List<User> TestUsers
@@ -27,7 +27,7 @@ namespace UserLogin
             _testUser1.Expired = DateTime.MaxValue;
                 _testUser1.username = "Rosen";
                 _testUser1.password = "password";
-                _testUser1.facNum = "121214123";
+                _testUser1.facNum = "1212163";
                 _testUser1.role = 1;
 
      //       DateTime timeCreated1 = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
@@ -38,7 +38,7 @@ namespace UserLogin
             _testUser2.Created = DateTime.Now;
             _testUser2.username = "Teodora";
             _testUser2.password = "password";
-            _testUser2.facNum = "121214123";
+            _testUser2.facNum = "1212161";
             _testUser2.role = 4;
 
             User _testUser3 = new User();
@@ -46,7 +46,7 @@ namespace UserLogin
             _testUser3.Created = DateTime.Now;
             _testUser3.username = "Stamat";
             _testUser3.password = "password";
-            _testUser3.facNum = "121214123";
+            _testUser3.facNum = "1212162";
             _testUser3.role = 4;
 
             _testUsers = new List<User>();

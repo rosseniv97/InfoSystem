@@ -4,7 +4,7 @@ using System.Text;
 
 namespace UserLogin
 {
-     class LoginValidation
+    public class LoginValidation
     {
         static private UserRoles _currentUserRole;
         static private String username;
