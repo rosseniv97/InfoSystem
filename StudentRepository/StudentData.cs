@@ -36,11 +36,11 @@ namespace StudentRepository
        static public void IsThereStudent(String facNum)
         {
             Student student = null;
-            student = (Student)(from stud in TestStudent where stud.facNum.Equals(facNum) select stud).FirstOrDefault();
+            student = (Student)(from stud in TestStudent where stud._facNum.Equals(facNum) select stud).FirstOrDefault();
 
             if (student != null)
             {
-                Console.WriteLine(student.firstName);
+                Console.WriteLine(student._firstName);
             }
             else Console.WriteLine("Student not found");
         }

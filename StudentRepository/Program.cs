@@ -8,8 +8,8 @@ namespace StudentRepository
         {
             for(int i = 0; i < 6; i++)
             {
-                Console.Write(StudentData.TestStudent[i].facNum+" \n");
-                Console.Write(StudentData.TestStudent[i].year + " \n");
+                Console.Write(StudentData.TestStudent[i]._facNum+" \n");
+                Console.Write(StudentData.TestStudent[i]._year + " \n");
 
             }
             String facNum;

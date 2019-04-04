@@ -18,7 +18,7 @@ namespace StudentRepository
             }
             else
             {
-                student = (from stud in StudentData.TestStudent where stud.facNum.Equals(user.facNum) select stud).FirstOrDefault();
+                student = (from stud in StudentData.TestStudent where stud._facNum.Equals(user.facNum) select stud).FirstOrDefault();
                 
             }
             if (student == null) Console.WriteLine("No such faculty number");
