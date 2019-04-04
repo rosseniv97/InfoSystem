@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Expenselt"
         mc:Ignorable="d"
+        Source="ExpenseltHome.xaml"
         Title="Expenselt" Height="350" Width="500">
 
 </NavigationWindow>

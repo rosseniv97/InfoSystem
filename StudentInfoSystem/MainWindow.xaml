@@ -11,31 +11,35 @@
             <ColumnDefinition Width="451*"/>
             <ColumnDefinition Width="343*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="lblUser" HorizontalAlignment="Left" Margin="24,28,0,0" TextWrapping="Wrap" Text="Лични данни" VerticalAlignment="Top" Height="27" Width="85"/>
-        <TextBlock x:Name="lblSurname" HorizontalAlignment="Left" Margin="43,81,0,0" TextWrapping="Wrap" Text="Презиме:" VerticalAlignment="Top"/>
-        <TextBlock x:Name="lblName" HorizontalAlignment="Left" Margin="42,60,0,0" TextWrapping="Wrap" Text="Име:" VerticalAlignment="Top"/>
-        <TextBlock x:Name="lblLastname" HorizontalAlignment="Left" Margin="42,102,0,0" TextWrapping="Wrap" Text="Фамилия:" VerticalAlignment="Top"/>
-        <TextBlock x:Name="lblStudent" HorizontalAlignment="Left" Margin="24,140,0,0" TextWrapping="Wrap" Text="Студентска информация" VerticalAlignment="Top" Height="27" Width="139"/>
-        <TextBlock x:Name="lblFaculty" HorizontalAlignment="Left" Margin="43,167,0,0" TextWrapping="Wrap" Text="Факултет:" VerticalAlignment="Top" Height="27" Width="85"/>
-        <TextBlock x:Name="lblSpec" HorizontalAlignment="Left" Margin="42,194,0,0" TextWrapping="Wrap" Text="Специалност:" VerticalAlignment="Top" Height="27" Width="85"/>
-        <TextBlock x:Name="lblEQL" HorizontalAlignment="Left" Margin="42,221,0,0" TextWrapping="Wrap" Text="ОКС:" VerticalAlignment="Top" Height="27" Width="85"/>
-        <TextBlock x:Name="lblStatus" HorizontalAlignment="Left" Margin="43,253,0,0" TextWrapping="Wrap" Text="Статус:" VerticalAlignment="Top" Height="27" Width="85"/>
-        <TextBlock x:Name="lblFacNum" HorizontalAlignment="Left" Margin="42,280,0,0" TextWrapping="Wrap" Text="Факултетeн номер:" VerticalAlignment="Top" Height="39" Width="121"/>
-        <TextBlock x:Name="lblYear" HorizontalAlignment="Left" Margin="251,167,0,0" TextWrapping="Wrap" Text="Курс:" VerticalAlignment="Top" Height="27" Width="85"/>
-        <TextBlock x:Name="lblStream" HorizontalAlignment="Left" Margin="251,199,0,0" TextWrapping="Wrap" Text="Поток:" VerticalAlignment="Top" Height="27" Width="85"/>
-        <TextBlock x:Name="lblGroup" HorizontalAlignment="Left" Margin="251,226,0,0" TextWrapping="Wrap" Text="Група:" VerticalAlignment="Top" Height="27" Width="85"/>
-        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="18" Margin="85,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top"  Width="97" Opacity="0.6"/>
-        <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Height="18" Margin="100,81,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="97" Opacity="0.6"/>
-        <TextBox x:Name="txtLastname_" HorizontalAlignment="Left" Height="22" Margin="100,101,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="97" Opacity="0.6"/>
+        <GroupBox>
+            <Grid>
+                <TextBlock x:Name="lblUser" HorizontalAlignment="Left" Margin="24,28,0,0" TextWrapping="Wrap" Text="Лични данни" VerticalAlignment="Top" Height="27" Width="85"/>
+                <TextBlock x:Name="lblSurname" HorizontalAlignment="Left" Margin="43,81,0,0" TextWrapping="Wrap" Text="Презиме:" VerticalAlignment="Top"/>
+                <TextBlock x:Name="lblName" HorizontalAlignment="Left" Margin="42,60,0,0" TextWrapping="Wrap" Text="Име:" VerticalAlignment="Top"/>
+                <TextBlock x:Name="lblLastname" HorizontalAlignment="Left" Margin="42,102,0,0" TextWrapping="Wrap" Text="Фамилия:" VerticalAlignment="Top"/>
+                <TextBlock x:Name="lblStudent" HorizontalAlignment="Left" Margin="24,140,0,0" TextWrapping="Wrap" Text="Студентска информация" VerticalAlignment="Top" Height="27" Width="139"/>
+                <TextBlock x:Name="lblFaculty" HorizontalAlignment="Left" Margin="43,167,0,0" TextWrapping="Wrap" Text="Факултет:" VerticalAlignment="Top" Height="27" Width="85"/>
+                <TextBlock x:Name="lblSpec" HorizontalAlignment="Left" Margin="42,194,0,0" TextWrapping="Wrap" Text="Специалност:" VerticalAlignment="Top" Height="27" Width="85"/>
+                <TextBlock x:Name="lblEQL" HorizontalAlignment="Left" Margin="42,221,0,0" TextWrapping="Wrap" Text="ОКС:" VerticalAlignment="Top" Height="27" Width="85"/>
+                <TextBlock x:Name="lblStatus" HorizontalAlignment="Left" Margin="43,253,0,0" TextWrapping="Wrap" Text="Статус:" VerticalAlignment="Top" Height="27" Width="85"/>
+                <TextBlock x:Name="lblFacNum" HorizontalAlignment="Left" Margin="42,280,0,0" TextWrapping="Wrap" Text="Факултетeн номер:" VerticalAlignment="Top" Height="39" Width="121"/>
+                <TextBlock x:Name="lblYear" HorizontalAlignment="Left" Margin="251,167,0,0" TextWrapping="Wrap" Text="Курс:" VerticalAlignment="Top" Height="27" Width="85"/>
+                <TextBlock x:Name="lblStream" HorizontalAlignment="Left" Margin="251,199,0,0" TextWrapping="Wrap" Text="Поток:" VerticalAlignment="Top" Height="27" Width="85"/>
+                <TextBlock x:Name="lblGroup" HorizontalAlignment="Left" Margin="251,226,0,0" TextWrapping="Wrap" Text="Група:" VerticalAlignment="Top" Height="27" Width="85"/>
+                <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="18" Margin="85,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top"  Width="97" Opacity="0.6"/>
+                <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Height="18" Margin="100,81,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="97" Opacity="0.6"/>
+                <TextBox x:Name="txtLastname_" HorizontalAlignment="Left" Height="22" Margin="100,101,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="97" Opacity="0.6"/>
+                <TextBox x:Name="txtFaculty" HorizontalAlignment="Left" Height="22" Margin="100,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Opacity="0.6"/>
+                <TextBox x:Name="txtSpec" HorizontalAlignment="Left" Height="22" Margin="119,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6"/>
+                <TextBox x:Name="txtOKS" HorizontalAlignment="Left" Height="22" Margin="80,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6"/>
+                <TextBox x:Name="txtStatus" HorizontalAlignment="Left" Height="22" Margin="95,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6"/>
+                <TextBox x:Name="txtFacNum" HorizontalAlignment="Left" Height="22" Margin="153,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6"/>
+                <TextBox x:Name="txtYear" HorizontalAlignment="Left" Height="22" Margin="287,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6"/>
+                <TextBox x:Name="txtStream" HorizontalAlignment="Left" Height="22" Margin="301,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6"/>
+                <TextBox x:Name="txtGroup" HorizontalAlignment="Left" Height="22" Margin="301,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6"/>
+            </Grid>
+        </GroupBox>
         <Button Content="Button" HorizontalAlignment="Left" Margin="314,108,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <TextBox x:Name="txtFaculty" HorizontalAlignment="Left" Height="22" Margin="100,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Opacity="0.6"/>
-        <TextBox x:Name="txtSpec" HorizontalAlignment="Left" Height="22" Margin="119,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6"/>
-        <TextBox x:Name="txtOKS" HorizontalAlignment="Left" Height="22" Margin="80,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6"/>
-        <TextBox x:Name="txtStatus" HorizontalAlignment="Left" Height="22" Margin="95,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6"/>
-        <TextBox x:Name="txtFacNum" HorizontalAlignment="Left" Height="22" Margin="153,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6"/>
-        <TextBox x:Name="txtYear" HorizontalAlignment="Left" Height="22" Margin="287,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6"/>
-        <TextBox x:Name="txtStream" HorizontalAlignment="Left" Height="22" Margin="301,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6"/>
-        <TextBox x:Name="txtGroup" HorizontalAlignment="Left" Height="22" Margin="301,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6"/>
 
     </Grid>
 </Window>
