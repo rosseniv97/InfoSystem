@@ -9,6 +9,46 @@
       Title="ExpenseIt - View Expense">
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="watermark.jpeg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="1" Content="Expense Report For:" FontSize="30" FontWeight="Medium" Foreground="#FF7A90B6" ForceCursor="True" IsManipulationEnabled="True"/>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Grid.Row="1" Content="Name:" FontSize="25" FontWeight="Medium" Foreground="#FF0A0A0B" ForceCursor="True" IsManipulationEnabled="True"/>
+            <Label Grid.Column="0" Grid.Row="2" Content="Department:" FontSize="25" FontWeight="Medium" Foreground="#FF060606" ForceCursor="True" IsManipulationEnabled="True"/>
+            <TextBlock Grid.Column="1" Grid.Row="2"></TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="1"></TextBlock>
+            <Grid Grid.Row="3" Margin="0,19.6,0,-0.4" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" Content="Expense Type" Foreground="#FFD7D6EA" Background="#FF6A73B9" FontSize="25"></Label>
+                <Label Grid.Column="1" Grid.Row="0" Content="Amount" Foreground="#FFD7D6EA" Background="#FF6A73B9" FontSize="25"></Label>
+                <ListBox x:Name="boxExpType" Grid.Column="0" Grid.Row="1" AllowDrop="True"></ListBox>
+                <ListBox x:Name="boxAmount" Grid.Column="1" Grid.Row="1"></ListBox>
+
+            </Grid>
+            
+        </Grid>
         
     </Grid>
 </Page>
