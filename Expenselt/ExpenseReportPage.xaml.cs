@@ -24,5 +24,11 @@ namespace Expenselt
         {
             InitializeComponent();
         }
+        public ExpenseReportPage(object data) : this()
+
+        {
+            // Bind to expense report data.
+            this.DataContext = data;
+        }
     }
 }

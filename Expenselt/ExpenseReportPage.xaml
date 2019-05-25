@@ -25,31 +25,39 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="33*"/>
+                <ColumnDefinition Width="17*"/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Grid.Row="1" Content="Name:" Foreground="#FF0A0A0B" ForceCursor="True" IsManipulationEnabled="True"/>
-            <Label Grid.Column="0" Grid.Row="2" Content="Department:" Foreground="#FF060606" ForceCursor="True" IsManipulationEnabled="True"/>
-            <TextBlock Grid.Column="1" Grid.Row="2"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="1"></TextBlock>
-            <Grid Grid.Row="3" Margin="0,19.6,0,-0.4" Grid.ColumnSpan="2">
+            <Label Grid.Column="0" Grid.Row="1" Content="Name:" Foreground="#FF0A0A0B" ForceCursor="True" IsManipulationEnabled="True" Height="26" Margin="0" Width="46"/>
+            <Label Grid.Column="0" Grid.Row="1" Margin="45,0,0,0" Content="{Binding XPath=@Name}"/>
+
+            <Label Grid.Column="0" Grid.Row="1" Content="Department:" Foreground="#FF060606" ForceCursor="True" IsManipulationEnabled="True" Height="26" Margin="0,30,0,0" Grid.RowSpan="2" Width="82"/>
+            <Label Grid.Column="0" Grid.Row="2" Margin="75,0.8,0,0" Content="{Binding XPath=@Department}" />
+            <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Margin="227,30,0,288.6" Grid.RowSpan="3"/>
+            <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Margin="227,0,0,0.2"/>
+            <Grid Grid.Row="3" Margin="0,19,0,-0.4" Grid.ColumnSpan="2">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto" MinWidth="149.6"/>
+                    <ColumnDefinition Width="Auto" MinWidth="32.8"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <Label Grid.Column="0" Grid.Row="0" Content="Expense Type" Foreground="#FFD7D6EA" Background="#FF6A73B9" ></Label>
-                <Label Grid.Column="1" Grid.Row="0" Content="Amount" Foreground="#FFD7D6EA" Background="#FF6A73B9" ></Label>
-                <ListBox x:Name="boxExpType" Grid.Column="0" Grid.Row="1" AllowDrop="True"></ListBox>
-                <ListBox x:Name="boxAmount" Grid.Column="1" Grid.Row="1"></ListBox>
+
+                <Label Grid.Column="0" Grid.Row="0" Content="Expense Type" Foreground="#FFD7D6EA" Background="#FF6A73B9" Margin="61,0,0,0" Height="26" Width="86"/>
+                <Label Grid.Column="0" Grid.Row="0" Content="Amount" Foreground="#FFD7D6EA" Background="#FF6A73B9" Height="26" Margin="0" Width="61" ></Label>
+                <DataGrid AutoGenerateColumns="False" RowHeaderWidth="0" Grid.Column="0" ItemsSource="{Binding XPath=Expense}" Margin="0,31,4.4,-0.4" Grid.RowSpan="2" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn  Binding="{Binding XPath=@ExpenseType}"/>
+                        <DataGridTextColumn  Binding="{Binding XPath=@ExpenseAmount}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
 
             </Grid>
-            
+
         </Grid>
-        
+
     </Grid>
-    
+
 </Page>

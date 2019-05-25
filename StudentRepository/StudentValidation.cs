@@ -25,5 +25,33 @@ namespace StudentRepository
 
             return student;
         }
+        public Student LogIn(string username, string password)
+        {
+            Student student = null;
+            if (username== "")
+            {
+                Console.WriteLine("No name was given");
+            }
+            else
+            {
+                student = (from stud in StudentData.TestStudent where stud._username.Equals(username) select stud).FirstOrDefault();
+            }
+            if (student == null)
+            {
+                Console.WriteLine("No such student found");
+                return student;
+            }
+            else
+            {
+                if (student._password == password) return student;
+                else
+                {
+                    Console.WriteLine("Wrong password");
+                    student = null;
+                    return student;
+                }
+            }
+
+        }
     }
 }

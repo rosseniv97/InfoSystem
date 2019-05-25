@@ -33,8 +33,20 @@ namespace StudentRepository
 
             }
         }
-       static public void IsThereStudent(String facNum)
+        static public Student LogIn(String username, String password)
         {
+            ResetStudent(); //initialize list
+
+            Student student = null;
+            StudentValidation validation = new StudentValidation();
+            student = validation.LogIn(username, password);
+            return student;
+
+        }
+        static public void IsThereStudent(String facNum)
+        {
+            
+
             Student student = null;
             student = (Student)(from stud in TestStudent where stud._facNum.Equals(facNum) select stud).FirstOrDefault();
 
@@ -44,5 +56,6 @@ namespace StudentRepository
             }
             else Console.WriteLine("Student not found");
         }
+
     }
 }

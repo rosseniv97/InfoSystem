@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:StudentInfoSystem"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid x:Name="MainGrid" Margin="25,0,-0.4,50">
+    <Grid x:Name="MainGrid" Margin="19,0,-0.4,21">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="451*"/>
             <ColumnDefinition Width="343*"/>
@@ -19,7 +19,21 @@
 
             </Image>
         </Grid>
-   
+        <Grid Grid.Column="0" Margin="101,280,123,57.2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Content="Username"></Label>
+            <Label Grid.Column="0" Grid.Row="1" Content="Password"></Label>
+            <TextBox x:Name="usernameBox" Grid.Column="1" Grid.Row="0" Margin="10.2,5,29.8,6.8"/>
+            <TextBox x:Name="passwordBox" Grid.Column="1" Grid.Row="1" Margin="10.2,5.2,29.8,4.8"></TextBox>
+        </Grid>
+
         <GroupBox Grid.Column="1">
             <Grid >
                 <TextBlock x:Name="lblUser" HorizontalAlignment="Left" Margin="24,28,0,0" TextWrapping="Wrap" Text="Лични данни" VerticalAlignment="Top" Height="27" Width="85"/>
@@ -35,19 +49,23 @@
                 <TextBlock x:Name="lblYear" HorizontalAlignment="Left" Margin="251,167,0,0" TextWrapping="Wrap" Text="Курс:" VerticalAlignment="Top" Height="27" Width="85"/>
                 <TextBlock x:Name="lblStream" HorizontalAlignment="Left" Margin="251,199,0,0" TextWrapping="Wrap" Text="Поток:" VerticalAlignment="Top" Height="27" Width="85"/>
                 <TextBlock x:Name="lblGroup" HorizontalAlignment="Left" Margin="251,226,0,0" TextWrapping="Wrap" Text="Група:" VerticalAlignment="Top" Height="27" Width="85"/>
-                <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="18" Margin="85,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top"  Width="97" Opacity="0.6"/>
-                <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Height="18" Margin="100,81,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="97" Opacity="0.6"/>
-                <TextBox x:Name="txtLastname_" HorizontalAlignment="Left" Height="22" Margin="100,101,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="97" Opacity="0.6"/>
-                <TextBox x:Name="txtFaculty" HorizontalAlignment="Left" Height="22" Margin="100,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Opacity="0.6"/>
-                <TextBox x:Name="txtSpec" HorizontalAlignment="Left" Height="22" Margin="119,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6"/>
-                <TextBox x:Name="txtOKS" HorizontalAlignment="Left" Height="22" Margin="80,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6"/>
-                <TextBox x:Name="txtStatus" HorizontalAlignment="Left" Height="22" Margin="95,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6"/>
-                <TextBox x:Name="txtFacNum" HorizontalAlignment="Left" Height="22" Margin="153,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6"/>
-                <TextBox x:Name="txtYear" HorizontalAlignment="Left" Height="22" Margin="287,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6"/>
-                <TextBox x:Name="txtStream" HorizontalAlignment="Left" Height="22" Margin="301,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6"/>
-                <TextBox x:Name="txtGroup" HorizontalAlignment="Left" Height="22" Margin="301,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6"/>
+                <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="18" Margin="85,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top"  Width="97" Opacity="0.6" Text="{Binding Path=_firstName}"/>
+                <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Height="18" Margin="100,81,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="97" Opacity="0.6" Text="{Binding Path=_secondName}"/>
+                <TextBox x:Name="txtLastname_" HorizontalAlignment="Left" Height="22" Margin="100,101,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="97" Opacity="0.6" Text="{Binding Path=_lastName}"/>
+                <TextBox x:Name="txtFaculty" HorizontalAlignment="Left" Height="22" Margin="100,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Opacity="0.6" Text="{Binding Path=_faculty}"/>
+                <TextBox x:Name="txtSpec" HorizontalAlignment="Left" Height="22" Margin="119,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6" Text="{Binding Path=_degree}"/>
+                <TextBox x:Name="txtOKS" HorizontalAlignment="Left" Height="22" Margin="80,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6" Text="{Binding Path=_status}"/>
+                <ListBox  ItemsSource="{Binding StudStatusChoices}" Margin="104,248,102.2,119.8"/>
+                <TextBox x:Name="txtFacNum" HorizontalAlignment="Left" Height="22" Margin="153,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6" Text="{Binding Path=_stream}"/>
+                <TextBox x:Name="txtYear" HorizontalAlignment="Left" Height="22" Margin="287,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6" Text="{Binding Path=_speciality}"/>
+                <TextBox x:Name="txtStream" HorizontalAlignment="Left" Height="22" Margin="301,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6" Text="{Binding Path=_facNum}"/>
+                <TextBox x:Name="txtGroup" HorizontalAlignment="Left" Height="22" Margin="301,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Opacity="0.6" Text="{Binding Path=_group}"/>
+                <Label Margin="-141,312,338.2,16.8" Content="{Binding Path=student._firstName}"></Label>
             </Grid>
         </GroupBox>
-
+        <Button x:Name="setMode" Content="Set Mode" HorizontalAlignment="Left" Height="27" Margin="37.2,379,0,-36.4" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="SetFieldsButton"/>
+        <Button x:Name="btnLogIn" Content="Влез" Margin="221,342,153,24.2" Click="LogIn"/>
+        <Button x:Name="btnLogOut" Content="Излез" Margin="301,342,73,24.2" Click="LogOut" Visibility="Hidden"/>
     </Grid>
 </Window>
+                                                            

@@ -20,6 +20,9 @@ namespace StudentRepository
         private int group;
         private DateTime dateVal;
         private DateTime datePay;
+        private string username;
+        private string password;
+
 
         public String _firstName
         {
@@ -157,11 +160,27 @@ namespace StudentRepository
         {
             get
             {
-                return _datePay;
+                return datePay;
             }
             set
             {
                 _datePay = value;
+            }
+        }
+        public string _username
+        {
+            get { return username; }
+            set
+            {
+
+            }
+        }
+        public string _password
+        {
+            get { return password; }
+            set
+            {
+
             }
         }
 
@@ -180,12 +199,17 @@ namespace StudentRepository
             this.speciality = speciality;
             this.group = group;
             this.stream = stream;
-
+            this.password = "123";
+            this.username = firstName;
             year = 1;
             status = 1;
             
             facNum+="121216";
             facNum+=facNumCount;               
+
+        }
+        public Student()
+        {
 
         }
     }

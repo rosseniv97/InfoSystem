@@ -18,6 +18,34 @@
     </Page.Resources>
 
     <Grid Margin="10,10,0,10">
+        <Grid.Resources>
+            <!-- Expense Report Data -->
+            <XmlDataProvider x:Key="ExpenseDataSource" XPath="Expenses">
+                <x:XData>
+                    <Expenses xmlns="">
+                        <Person Name="Mike" Department="Legal">
+                            <Expense ExpenseType="Lunch" ExpenseAmount="50" />
+                            <Expense ExpenseType="Transportation" ExpenseAmount="50" />
+                        </Person>
+                        <Person Name="Lisa" Department="Marketing">
+                            <Expense ExpenseType="Document printing" ExpenseAmount="50"/>
+                            <Expense ExpenseType="Gift" ExpenseAmount="125" />
+                        </Person>
+                        <Person Name="John" Department="Engineering">
+                            <Expense ExpenseType="Magazine subscription" ExpenseAmount="50"/>
+                            <Expense ExpenseType="New machine" ExpenseAmount="600" />
+                            <Expense ExpenseType="Software" ExpenseAmount="500" />
+                        </Person>
+                        <Person Name="Mary" Department="Finance">
+                            <Expense ExpenseType="Dinner" ExpenseAmount="100" />
+                        </Person>
+                        <Person Name="Theo" Department="Marketing">
+                            <Expense ExpenseType="Dinner" ExpenseAmount="100" />
+                        </Person>
+                    </Expenses>
+                </x:XData>
+            </XmlDataProvider>
+        </Grid.Resources>
         <Grid.Background>
             <ImageBrush ImageSource="watermark.jpeg"/>
         </Grid.Background>
@@ -36,13 +64,17 @@
         <Border Height="Auto" Padding="5" Background="#4E87D4" Grid.Column="1" Grid.Row="1">
             <Label Style="{StaticResource listHeaderTextStyle}" >Names</Label>
         </Border>
-        <ListBox Name="peopleListBox" Grid.Column="1" Grid.Row="2">
-            <ListBoxItem>Mike</ListBoxItem>
-            <ListBoxItem>John</ListBoxItem>
-            <ListBoxItem>Lia</ListBoxItem>
+        <ListBox Name="peopleListBox" Grid.Column="1" Grid.Row="2" ItemsSource="{Binding Source={StaticResource ExpenseDataSource}, XPath=Person}" SelectionChanged="peopleListBox_SelectionChanged_1">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding XPath=@Name}"></Label>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
-        <Button Margin="0,10,0,0" Width="125" Height="25" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="3" Click="Button_Click_1">View</Button>
-        <Button Name="Greeting" Margin="0,10,0,0" Width="125" Height="25" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="3" Click="Button_Click">Greeting</Button>
+        <Label Grid.Column="0" Grid.Row="3" Content="{Binding Path=LastChecked}"/>
+        <ListBox Grid.Column="0" Grid.Row="2" ItemsSource="{Binding Path=PersonsChecked}"></ListBox>
+        <Button x:Name="View" Margin="0,10,0,0" Width="125" Height="25" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="3" Content="{Binding Path=SelectedItem.Attributes[Name], ElementName=peopleListBox}" Click="ViewReport"></Button>
+        <Button Name="Greeting" Margin="0,10,0,0" Width="125" Height="25" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="3" Click="UserGreeting">Greeting</Button>
     </Grid>
    
 </Page>
